@@ -9,14 +9,6 @@ from utils.SySQL import SQLManager
 """
 
 
-# 根据ID查询数据
-def select_notice_by_id(id):
-    sql = "SELECT * FROM notice WHERE id=%s"
-    sqlManager = SQLManager()
-    data = sqlManager.get_one(sql, id)
-    notice = get_class_one(data, Notice)
-    sqlManager.close()
-    return notice
 
 
 # 分页数据

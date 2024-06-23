@@ -9,15 +9,6 @@ import logging
 """
 
 
-# 根据ID查询数据
-def select_slog_by_id(id):
-    sql = "SELECT * FROM slog WHERE id=%s"
-    sqlManager = SQLManager()
-    data = sqlManager.get_one(sql, id)
-    slog = get_class_one(data, Notice)
-    sqlManager.close()
-    return slog
-
 
 # 分页数据
 def select_slog_list(page, limit, where):
