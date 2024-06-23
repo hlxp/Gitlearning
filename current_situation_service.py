@@ -9,13 +9,6 @@ from utils.SySQL import SQLManager
 """
 
 
-# 根据渔场名称查询最新数据
-def select_current_situation_by_fishery(fishery):
-    sql = "SELECT * FROM currentsituation WHERE fishery_name=%s order by create_time desc limit 1"
-    sqlManager = SQLManager()
-    data = sqlManager.get_one(sql, fishery)
-    sqlManager.close()
-    return data
 
 
 # 根据ID查询数据
