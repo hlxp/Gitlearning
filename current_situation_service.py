@@ -53,29 +53,6 @@ def get_search_params(where):
     return sql
 
 
-# 鱼的种类列表
-def get_fish_list():
-    sql = "SELECT fish_name FROM CurrentSituation GROUP BY fish_name"
-    sqlManager = SQLManager()
-    fish_list = []
-    data = sqlManager.get_list(sql)
-    for i in data:
-        fish_list.append(i['fish_name'])
-    sqlManager.close()
-    return fish_list
-
-
-# 获取水质信息
-def get_water_list():
-    sql = "SELECT water_quality FROM CurrentSituation GROUP BY water_quality"
-    sqlManager = SQLManager()
-    water_list = []
-    data = sqlManager.get_list(sql)
-    for i in data:
-        water_list.append(i['water_quality'])
-    sqlManager.close()
-    return water_list
-
 
 # 获取渔场列表
 def get_fishery_list():

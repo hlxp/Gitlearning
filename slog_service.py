@@ -64,19 +64,4 @@ def del_slog_list(ids):
     return Result(True, "删除成功")
 
 
-# 获取单个数据
-def get_slog(id):
-    sqlManager = SQLManager()
-    sql = "select * from `slog` where id=%s "
-    data = sqlManager.get_one(sql, id)
-    sqlManager.close()
-    return data
-
-
 # 查询条件处理
-def get_search_params(where):
-    sql = ''
-    if where:
-        if where['log'] and len(where['log']) > 0:
-            sql = sql + " AND log like '%%" + where['log'] + "%%' "
-    return sql

@@ -41,16 +41,6 @@ def insert_notice(data):
     sqlManager.close()
     return Result(True, "添加成功")
 
-
-# 修改数据
-def edit_notice(data):
-    sqlManager = SQLManager()
-    sql = "update notice SET title=%s,content=%s,user_name=%s where id=%s"
-    sqlManager.moddify(sql, (data['title'], data['content'], data['user_name'], data['id']))
-    sqlManager.close()
-    return Result(True, "修改成功")
-
-
 # 删除数据
 def del_notice(id):
     sqlManager = SQLManager()
@@ -60,13 +50,6 @@ def del_notice(id):
     return Result(True, "删除成功")
 
 
-# 批量删除
-def del_notice_list(ids):
-    sqlManager = SQLManager()
-    sql = "DELETE FROM notice where id in (" + ids + ")"
-    sqlManager.moddify(sql)
-    sqlManager.close()
-    return Result(True, "删除成功")
 
 
 # 获取单个数据
